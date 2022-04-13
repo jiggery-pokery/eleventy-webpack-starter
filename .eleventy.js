@@ -40,7 +40,6 @@ module.exports = (config) => {
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
 
   // Pass-through files
-  config.addPassthroughCopy('src/_headers');
   config.addPassthroughCopy('src/favicon.ico');
   // Everything inside static is copied verbatim to `_site`
   config.addPassthroughCopy('src/assets/static');
