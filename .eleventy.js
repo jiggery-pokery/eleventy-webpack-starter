@@ -36,11 +36,10 @@ module.exports = (config) => {
   // Shortcodes
   config.addShortcode('icon', shortcodes.icon);
   config.addPairedShortcode('markdown', shortcodes.markdown);
-  config.addNunjucksAsyncShortcode('image', shortcodes.image);
+  config.addNunjucksAsyncShortcode('img', shortcodes.img);
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
 
   // Pass-through files
-  config.addPassthroughCopy('src/_headers');
   config.addPassthroughCopy('src/favicon.ico');
   // Everything inside static is copied verbatim to `_site`
   config.addPassthroughCopy('src/assets/static');
