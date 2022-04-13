@@ -16,7 +16,7 @@ module.exports = (config) => {
   config.setLibrary('md', markdown);
 
   // Allow eleventy to understand yaml files
-  config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
+  config.addDataExtension('yml', (contents) => yaml.load(contents));
 
   // Plugins
   config.addPlugin(NavigationPlugin);
