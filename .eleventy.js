@@ -36,7 +36,7 @@ module.exports = (config) => {
   // Shortcodes
   config.addShortcode('icon', shortcodes.icon);
   config.addPairedShortcode('markdown', shortcodes.markdown);
-  config.addNunjucksAsyncShortcode('image', shortcodes.image);
+  config.addNunjucksAsyncShortcode('img', shortcodes.img);
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
 
   // Pass-through files
