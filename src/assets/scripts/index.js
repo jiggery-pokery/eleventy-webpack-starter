@@ -5,6 +5,7 @@ import svg from './transitions/svg'
 import fade from './transitions/fade'
 
 import anime from 'animejs/lib/anime.es.js';
+import dissolve from './transitions/dissolve';
 // const { barba, barbaRouter: router } = window
 
 console.info('🚀App:init')
@@ -40,10 +41,10 @@ barba.init({
       leave: ({ current }) => fade(current.container, duration * 0.5, 1, 0),
       enter: ({ next }) => fade(next.container, duration * 0.5, 0, 1),
     },
-    // {
-    //   to: { namespace: 'home'},
-    //   once: ({ next }) => once(next.container),
-    // }
+    {
+      to: { namespace: 'home'},
+      once: ({ next }) => dissolve(next.container),
+    }
   ],
 })
 
