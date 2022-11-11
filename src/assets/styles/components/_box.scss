@@ -1,0 +1,19 @@
+.boxList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    background-color: blueviolet;
+    margin-bottom: 15px;
+    width: 45%;
+    // flex-shrink: 0;
+
+    a {
+        display: block;
+    }
+}
