@@ -49,6 +49,9 @@ module.exports = (config) => {
     ...config.browserSyncConfig,
     // Reload when manifest file changes
     files: [manifestPath],
+    online: false,
+    port: 6969,
+    reloadDelay: 200,
     // Show 404 page on invalid urls
     callbacks: {
       ready: (err, browserSync) => {
