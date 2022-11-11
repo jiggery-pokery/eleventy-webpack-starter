@@ -18,12 +18,16 @@
     <link rel="stylesheet" href="{% webpack 'main.css' %}">
   </head>
   <body class="{{ bodyClass }}">
-    <main>
-      {{ content | safe }}
-    </main>
+    <div data-barba="wrapper">
+      <div data-barba="container" data-barba-namespace="{{ ns }}">
+      <main>
+        {{ content | safe }}
+      </main>
+      </div>
+    </div>
 
     <footer>
-      <p><a href="{{ site.url }}">{% icon "github" %}eleventy-webpack</a> - <time datetime="{{ build.timestamp | formatISO }}">{{ build.timestamp | format("dd LLL yyyy") }}</time></p>
+      <p><a href="{{ site.url }}">{% icon "github" %}{{ site.title }}</a> - <time datetime="{{ build.timestamp | formatISO }}">{{ build.timestamp | format("dd LLL yyyy") }}</time></p>
     </footer>
     <script async defer src="{% webpack 'main.js' %}"></script>
   </body>
