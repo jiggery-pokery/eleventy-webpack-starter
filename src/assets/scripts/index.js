@@ -3,8 +3,9 @@ import slideUp from './transitions/slideUp'
 import once from './transitions/once'
 import svg from './transitions/svg'
 import fade from './transitions/fade'
+import entrance from './transitions/entrance'
 
-import anime from 'animejs/lib/anime.es.js';
+// import anime from 'animejs/lib/anime.es.js';
 import dissolve from './transitions/dissolve';
 // const { barba, barbaRouter: router } = window
 
@@ -29,22 +30,17 @@ barba.init({
   transitions: [
     {
       sync: true,
-      from: { route: 'home'},
-      leave: ({ current }) => fade(current.container, duration, 1, 0),
-      beforeEnter({ next }) {
-        next.container.style.zIndex = -1 
-      }
+      to: { namespace: 'home'},
+      leave: ({ current }) => fade(current.container, duration * 0.5, 1, 0),
+      enter: ({ next }) => fade(next.container, duration * 0.5, 0, 1),
+      once: ({ next }) => dissolve(next.container),
     },
     {
       sync: true,
-      to: { route: 'home'},
-      leave: ({ current }) => fade(current.container, duration * 0.5, 1, 0),
-      enter: ({ next }) => fade(next.container, duration * 0.5, 0, 1),
+      to: { namespace: 'about'},
+      leave: ({ current }) => fade(current.container, duration, 1, 0),
+      enter: ({ next }) => entrance(next.container),
     },
-    {
-      to: { namespace: 'home'},
-      once: ({ next }) => dissolve(next.container),
-    }
   ],
 })
 

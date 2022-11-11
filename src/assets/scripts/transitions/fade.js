@@ -1,8 +1,8 @@
 import anime from 'animejs/lib/anime.es.js';
 
-export default (targets, duration, from, to) => {
+export default (targets, durationx, from, to) => {
     // targets.style.transform = `opacity(${from}%)`;
-  
+    const duration = 1200 //1200
     // const opacity = `${to}%`;
     const anim = anime.timeline({
       easing: 'easeInOutSine',

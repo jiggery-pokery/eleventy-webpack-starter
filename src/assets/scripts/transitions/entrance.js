@@ -1,9 +1,9 @@
 import anime from 'animejs/lib/anime.es.js';
 
 export default (el) => {
-  const targets = el.querySelectorAll('h1, h2, a');
+  const targets = el.querySelectorAll('h1');
   console.log(targets);
-  const duration = 750;
+  const duration = 550;
   const anim = anime({
     autoplay: false,
     targets,
